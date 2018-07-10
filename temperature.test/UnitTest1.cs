@@ -8,6 +8,7 @@ namespace temperature.test {
     public class UnitTest1 {
         [Theory (DisplayName = "เปลี่ยนค่า องศา Fahrenheit ให้เป็น Celsius ได้สำเร็จ")]
         [InlineData (32, 0)]
+        [InlineData (41, 5)]
         public void ConvertFahrenheitToCelsiusSuccess (double input, double expectedResult) {
             var cal = new TempCalculator ();
             var x = cal.ConvertFahrenheitToCelsius (input);
@@ -17,6 +18,7 @@ namespace temperature.test {
 
         [Theory (DisplayName = "เปลี่ยนค่า องศา Kelvin ให้เป็น Celsius ได้สำเร็จ")]
         [InlineData (363.15, 90)]
+        [InlineData (373.15, 100)]
         public void ConvertKelvinToCelsiusSuccess (double input, double expectedResult) {
             var cal = new TempCalculator ();
             var x = cal.ConvertKelvinToCelsius (input);
